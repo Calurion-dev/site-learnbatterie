@@ -1,0 +1,956 @@
+import type { Family, Rudiment } from "@/lib/types";
+
+export const familyTips: Record<Family, string[]> = {
+  rolls: [
+    "Travaille lentement et garde le rebond : la baguette doit revenir d'elle-même.",
+    "Compte à voix haute pour vérifier que chaque coup tombe au bon endroit.",
+    "Monte le tempo seulement quand huit mesures passent sans tension.",
+  ],
+  diddles: [
+    "Accentue légèrement le premier coup du groupe pour garder la clarté.",
+    "Relâche la main après le double pour éviter de bloquer le rebond.",
+    "Travaille la main faible deux fois plus que la main forte.",
+  ],
+  flams: [
+    "La note de grâce est très douce et très proche de la note principale.",
+    "Pose la baguette de grâce presque sur la peau avant de frapper.",
+    "Écoute la différence entre un flam net et deux coups séparés.",
+  ],
+  drags: [
+    "Le drag est un petit rebond, pas un coup fort : deux sons doux avant la note principale.",
+    "Garde la main détendue et laisse la baguette rebondir deux fois.",
+    "Travaille d'abord le drag seul, puis ajoute la note principale.",
+  ],
+};
+
+export const familyMistakes: Record<Family, string[]> = {
+  rolls: [
+    "Serrer les baguettes pour aller plus vite.",
+    "Monter le tempo avant que le geste soit propre.",
+    "Laisser les coups perdre leur régularité au fil des mesures.",
+  ],
+  diddles: [
+    "Confondre le nombre de coups simples et doubles.",
+    "Écraser le deuxième coup du double.",
+    "Négliger la main faible.",
+  ],
+  flams: [
+    "Jouer les deux baguettes exactement en même temps : ce n'est plus un flam.",
+    "Frapper la note de grâce trop fort.",
+    "Perdre la note principale après l'ornement.",
+  ],
+  drags: [
+    "Faire un drag trop fort ou trop long.",
+    "Ajouter trop de rebonds.",
+    "Séparer le drag de la note principale.",
+  ],
+};
+
+export const rudiments: Rudiment[] = [
+  {
+    slug: "single-stroke-roll",
+    name: "Single stroke roll",
+    family: "rolls",
+    level: 1,
+    summary: "Le rudiment de base : deux coups alternés, réguliers et détendus.",
+    description:
+      "Le single stroke roll alterne main droite et main gauche. C'est le premier rudiment à travailler, car il installe le geste, le rebond et la régularité. Tous les autres rolls en découlent.",
+    sticking: ["R", "L", "R", "L", "R", "L", "R", "L"],
+    counts: "1 & 2 & 3 & 4 &",
+    tempoStart: 60,
+    tempoTarget: 120,
+    steps: [
+      "Joue quatre coups alternés très lents en vérifiant que les baguettes rebondissent.",
+      "Répète huit mesures sans métronome, en comptant à voix haute.",
+      "Ajoute le métronome à 60 BPM, puis monte de 5 BPM quand c'est propre.",
+      "Termine par un crescendo et un decrescendo sur huit mesures.",
+    ],
+    application:
+      "Joue le motif sur le charley ou la caisse claire, puis garde la grosse caisse sur 1 et 3.",
+  },
+  {
+    slug: "single-stroke-four",
+    name: "Single stroke four",
+    family: "rolls",
+    level: 1,
+    summary: "Quatre coups alternés, souvent utilisés comme petite cellule de fill.",
+    description:
+      "Le single stroke four est une cellule de quatre coups alternés. Il se travaille comme un groupe compact, avec un accent sur le premier ou le dernier coup selon le contexte.",
+    sticking: ["R", "L", "R", "L"],
+    counts: "1 e & a",
+    tempoStart: 60,
+    tempoTarget: 100,
+    steps: [
+      "Joue les quatre coups en un seul geste continu, sans pause entre les notes.",
+      "Accentue le premier coup, puis le dernier, pour sentir les deux options.",
+      "Place la cellule sur les temps 1 et 3 avec un métronome.",
+      "Répète sur la caisse claire, puis autour du kit.",
+    ],
+    application:
+      "Utilise la cellule comme fill de fin de phrase : quatre coups sur les temps 3 et 4.",
+  },
+  {
+    slug: "single-stroke-seven",
+    name: "Single stroke seven",
+    family: "rolls",
+    level: 1,
+    summary: "Sept coups alternés : une cellule plus longue pour travailler le souffle.",
+    description:
+      "Le single stroke seven enchaîne sept coups alternés. Il oblige à garder la même qualité du premier au dernier coup et à ne pas se précipiter sur la fin.",
+    sticking: ["R", "L", "R", "L", "R", "L", "R"],
+    counts: "1 e & a 2 e &",
+    tempoStart: 60,
+    tempoTarget: 100,
+    steps: [
+      "Compte les sept coups à voix haute avant de jouer.",
+      "Joue lentement en gardant les épaules basses.",
+      "Accentue le premier coup, puis le dernier, sans changer le tempo.",
+      "Intègre la cellule dans une mesure de 4/4 avec un métronome.",
+    ],
+    application:
+      "Place les sept coups sur les temps 1 à 2 et garde le reste de la mesure pour un groove.",
+  },
+  {
+    slug: "multiple-bounce-roll",
+    name: "Multiple bounce roll",
+    family: "rolls",
+    level: 2,
+    summary: "Un roulement obtenu en laissant la baguette rebondir plusieurs fois.",
+    description:
+      "Le multiple bounce roll, ou buzz roll, produit un son continu en laissant la baguette rebondir plusieurs fois sur la peau. La pression doit être minimale : c'est le rebond qui travaille.",
+    sticking: ["R*", "L*", "R*", "L*"],
+    counts: "1 2 3 4",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Pose la baguette sur la peau et laisse-la rebondir sans serrer.",
+      "Cherche un son dense et régulier, sans coups séparés.",
+      "Alterne les mains toutes les deux mesures pour équilibrer.",
+      "Tiens le roulement huit mesures, puis varie le volume.",
+    ],
+    application:
+      "Utilise le buzz roll pour remplacer une note longue ou pour créer un fond sonore sous un groove.",
+  },
+  {
+    slug: "triple-stroke-roll",
+    name: "Triple stroke roll",
+    family: "rolls",
+    level: 2,
+    summary: "Trois coups par main : le contrôle avant les rolls longs.",
+    description:
+      "Le triple stroke roll demande trois coups consécutifs avec la même main. Il développe le contrôle des doigts et prépare les roulements plus rapides.",
+    sticking: ["RRR", "LLL", "RRR", "LLL"],
+    counts: "1 2 3 4",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue trois coups avec la main droite, puis trois avec la gauche, très lentement.",
+      "Garde la baguette basse et utilise les doigts pour les deux derniers coups.",
+      "Répète quatre mesures, puis alterne toutes les deux mesures.",
+      "Monte le tempo par paliers de 5 BPM.",
+    ],
+    application:
+      "Place un triple stroke sur chaque temps d'une mesure lente, puis passe à un groove.",
+  },
+  {
+    slug: "double-stroke-open-roll",
+    name: "Double stroke open roll",
+    family: "rolls",
+    level: 1,
+    summary: "Deux coups par main, propres et égaux : la base des rolls ouverts.",
+    description:
+      "Le double stroke open roll enchaîne deux coups par main. Le deuxième coup doit être aussi fort et net que le premier. C'est un rudiment fondamental pour la vitesse et le contrôle.",
+    sticking: ["RR", "LL", "RR", "LL", "RR", "LL", "RR", "LL"],
+    counts: "1 & 2 & 3 & 4 &",
+    tempoStart: 60,
+    tempoTarget: 110,
+    steps: [
+      "Joue deux coups par main en laissant la baguette rebondir pour le second.",
+      "Vérifie que les deux coups ont le même volume.",
+      "Travaille la main faible seule, puis alterne.",
+      "Ajoute le métronome et monte de 5 BPM quand les doubles restent égaux.",
+    ],
+    application:
+      "Joue les doubles sur le charley pendant que la grosse caisse marque 1 et 3.",
+  },
+  {
+    slug: "five-stroke-roll",
+    name: "Five stroke roll",
+    family: "rolls",
+    level: 2,
+    summary: "Deux doubles suivis d'un coup d'accent : la première cellule de roll.",
+    description:
+      "Le five stroke roll combine deux doubles et un coup final. Il se joue souvent comme une cellule de fill, avec l'accent sur la dernière note.",
+    sticking: ["RR", "LL", "R"],
+    counts: "1 e & a 2",
+    tempoStart: 60,
+    tempoTarget: 100,
+    steps: [
+      "Joue les deux doubles lentement, puis ajoute le coup final.",
+      "Accentue la dernière note sans l'écraser.",
+      "Répète la cellule sur chaque temps, puis tous les deux temps.",
+      "Intègre-la dans un fill de quatre temps.",
+    ],
+    application:
+      "Utilise le five stroke roll comme fill sur les temps 3 et 4, avec un crash à l'arrivée.",
+  },
+  {
+    slug: "six-stroke-roll",
+    name: "Six stroke roll",
+    family: "rolls",
+    level: 2,
+    summary: "Un roll de six coups avec un accent sur la première note.",
+    description:
+      "Le six stroke roll est une cellule de six coups, souvent écrite RLLRRL. L'accent tombe sur le premier coup, ce qui donne une direction à la phrase.",
+    sticking: ["R", "L", "L", "R", "R", "L"],
+    counts: "1 e & a 2 e",
+    tempoStart: 60,
+    tempoTarget: 100,
+    steps: [
+      "Travaille la cellule lentement en comptant les six coups.",
+      "Accentue le premier coup et garde les autres égaux.",
+      "Alterne le départ main droite et main gauche.",
+      "Place la cellule sur les temps 1 et 3.",
+    ],
+    application:
+      "Joue le six stroke roll en fill, puis termine sur la caisse claire ou un tom.",
+  },
+  {
+    slug: "seven-stroke-roll",
+    name: "Seven stroke roll",
+    family: "rolls",
+    level: 2,
+    summary: "Sept coups, une cellule plus longue à garder régulière.",
+    description:
+      "Le seven stroke roll enchaîne sept coups avec un accent sur le premier. La difficulté est de garder la même qualité sur les sept notes, sans accélérer.",
+    sticking: ["R", "L", "L", "R", "R", "L", "L"],
+    counts: "1 e & a 2 e &",
+    tempoStart: 60,
+    tempoTarget: 100,
+    steps: [
+      "Compte sept coups à voix haute, puis joue-les lentement.",
+      "Accentue le premier coup et garde les six autres égaux.",
+      "Alterne le départ main droite et main gauche.",
+      "Travaille la cellule sur une mesure, puis enchaîne avec un groove.",
+    ],
+    application:
+      "Utilise le seven stroke roll pour remplir la fin d'une phrase de quatre mesures.",
+  },
+  {
+    slug: "nine-stroke-roll",
+    name: "Nine stroke roll",
+    family: "rolls",
+    level: 3,
+    summary: "Neuf coups : la régularité commence à demander du souffle.",
+    description:
+      "Le nine stroke roll est une cellule de neuf coups. Il se travaille lentement, en gardant le même espace entre chaque note et un accent sur le premier coup.",
+    sticking: ["R", "L", "L", "R", "R", "L", "L", "R", "R"],
+    tempoStart: 60,
+    tempoTarget: 90,
+    steps: [
+      "Joue la cellule sans métronome en comptant les neuf coups.",
+      "Garde les épaules et les poignets détendus.",
+      "Accentue le premier coup, puis vérifie que le dernier n'est pas plus fort.",
+      "Monte le tempo par paliers de 5 BPM.",
+    ],
+    application:
+      "Place la cellule sur deux temps et termine par un coup de grosse caisse.",
+  },
+  {
+    slug: "ten-stroke-roll",
+    name: "Ten stroke roll",
+    family: "rolls",
+    level: 3,
+    summary: "Dix coups, un roll intermédiaire pour travailler l'endurance.",
+    description:
+      "Le ten stroke roll ajoute un coup au nine stroke roll. Il développe l'endurance et la régularité sur des cellules plus longues.",
+    sticking: ["R", "L", "L", "R", "R", "L", "L", "R", "R", "L"],
+    tempoStart: 60,
+    tempoTarget: 90,
+    steps: [
+      "Travaille la cellule lentement, en deux groupes de cinq.",
+      "Vérifie que le passage d'une main à l'autre reste fluide.",
+      "Accentue le premier coup et garde le reste égal.",
+      "Alterne le départ main droite et main gauche.",
+    ],
+    application:
+      "Utilise le ten stroke roll comme transition entre deux sections d'un morceau.",
+  },
+  {
+    slug: "eleven-stroke-roll",
+    name: "Eleven stroke roll",
+    family: "rolls",
+    level: 3,
+    summary: "Onze coups : une cellule longue qui prépare les rolls avancés.",
+    description:
+      "Le eleven stroke roll est une cellule de onze coups. Il demande de la patience et un geste relâché pour ne pas s'essouffler.",
+    sticking: ["R", "L", "L", "R", "R", "L", "L", "R", "R", "L", "L"],
+    tempoStart: 60,
+    tempoTarget: 90,
+    steps: [
+      "Décompose la cellule en groupes de trois ou quatre coups.",
+      "Joue chaque groupe proprement, puis enchaîne sans pause.",
+      "Garde le métronome à 60 BPM jusqu'à ce que la cellule soit régulière.",
+      "Monte de 5 BPM seulement après huit mesures propres.",
+    ],
+    application:
+      "Place la cellule sur une mesure lente, puis laisse la dernière note tomber sur le temps 1 suivant.",
+  },
+  {
+    slug: "thirteen-stroke-roll",
+    name: "Thirteen stroke roll",
+    family: "rolls",
+    level: 3,
+    summary: "Treize coups, pour travailler la constance sur une longue cellule.",
+    description:
+      "Le thirteen stroke roll est une cellule de treize coups. La difficulté est de garder le même volume et le même espacement du début à la fin.",
+    sticking: [
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+    ],
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Compte les treize coups et repère les groupes de deux.",
+      "Joue lentement en vérifiant le volume des dernières notes.",
+      "Travaille la cellule sur une mesure, puis sur deux mesures.",
+      "Enregistre-toi pour vérifier la régularité.",
+    ],
+    application:
+      "Utilise la cellule comme roulement de transition avant un refrain.",
+  },
+  {
+    slug: "fifteen-stroke-roll",
+    name: "Fifteen stroke roll",
+    family: "rolls",
+    level: 4,
+    summary: "Quinze coups : un roll long qui exige du relâchement.",
+    description:
+      "Le fifteen stroke roll est une cellule de quinze coups. Il se travaille comme un roulement continu, avec un accent sur le premier coup et une fin propre.",
+    sticking: [
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+    ],
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Travaille la cellule en trois groupes de cinq coups.",
+      "Relâche la pression après chaque groupe.",
+      "Garde le même volume du premier au dernier coup.",
+      "Monte le tempo sans perdre la régularité.",
+    ],
+    application:
+      "Place le fifteen stroke roll sur une mesure complète, puis termine sur un crash.",
+  },
+  {
+    slug: "seventeen-stroke-roll",
+    name: "Seventeen stroke roll",
+    family: "rolls",
+    level: 4,
+    summary: "Dix-sept coups : le roll long, pour l'endurance et le contrôle.",
+    description:
+      "Le seventeen stroke roll est une cellule de dix-sept coups. C'est un exercice d'endurance et de concentration : chaque note doit rester égale.",
+    sticking: [
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+      "L",
+      "L",
+      "R",
+      "R",
+    ],
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Décompose la cellule en groupes de quatre et un reste.",
+      "Joue chaque groupe sans tension, puis enchaîne.",
+      "Vérifie que le dernier coup est aussi propre que le premier.",
+      "Travaille la cellule sur deux mesures, puis en contexte.",
+    ],
+    application:
+      "Utilise le seventeen stroke roll comme roulement de fin de morceau ou de transition.",
+  },
+  {
+    slug: "single-paradiddle",
+    name: "Single paradiddle",
+    family: "diddles",
+    level: 1,
+    summary: "R L R R : le paradiddle de base, indispensable pour les fills.",
+    description:
+      "Le single paradiddle alterne un coup simple et un double : RLRR, puis LRLL. Il permet de changer de main tout en gardant un mouvement fluide.",
+    sticking: ["R", "L", "R", "R", "L", "R", "L", "L"],
+    counts: "1 & 2 & 3 & 4 &",
+    tempoStart: 60,
+    tempoTarget: 100,
+    steps: [
+      "Joue RLRR puis LRLL lentement, en accentuant le premier coup.",
+      "Vérifie que le double est égal et que la main faible reste souple.",
+      "Répète huit mesures avec un métronome à 60 BPM.",
+      "Déplace le paradiddle sur le kit : caisse claire, toms, charley.",
+    ],
+    application:
+      "Joue le paradiddle entre caisse claire et toms pour créer un fill de quatre temps.",
+  },
+  {
+    slug: "double-paradiddle",
+    name: "Double paradiddle",
+    family: "diddles",
+    level: 2,
+    summary: "R L R L R R : deux coups simples avant le double.",
+    description:
+      "Le double paradiddle ajoute deux coups simples avant le double : RLRLRR, puis LRLRLL. Il développe la coordination et la circulation autour du kit.",
+    sticking: ["R", "L", "R", "L", "R", "R", "L", "R", "L", "R", "L", "L"],
+    counts: "1 & 2 & 3 & 4 & 5 & 6 &",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Décompose le motif en deux groupes de trois coups.",
+      "Joue lentement en accentuant le premier coup de chaque groupe.",
+      "Alterne le départ main droite et main gauche.",
+      "Travaille le motif sur le kit en gardant le tempo.",
+    ],
+    application:
+      "Utilise le double paradiddle pour circuler sur les toms dans un fill de six temps.",
+  },
+  {
+    slug: "triple-paradiddle",
+    name: "Triple paradiddle",
+    family: "diddles",
+    level: 3,
+    summary: "Trois coups simples avant le double : un motif long et fluide.",
+    description:
+      "Le triple paradiddle enchaîne trois coups simples puis un double : RLRLRLRR, puis LRLRLRLL. Il demande de la mémoire musculaire et de la régularité.",
+    sticking: [
+      "R",
+      "L",
+      "R",
+      "L",
+      "R",
+      "L",
+      "R",
+      "R",
+      "L",
+      "R",
+      "L",
+      "R",
+      "L",
+      "R",
+      "L",
+      "L",
+    ],
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue le motif très lentement en comptant les quatre premiers coups.",
+      "Marque le double final sans l'écraser.",
+      "Alterne le départ main droite et main gauche.",
+      "Travaille le motif sur une mesure, puis en fill.",
+    ],
+    application:
+      "Place le triple paradiddle sur les toms pour un fill de huit temps.",
+  },
+  {
+    slug: "single-paradiddle-diddle",
+    name: "Single paradiddle-diddle",
+    family: "diddles",
+    level: 3,
+    summary: "R L R R L L : un motif de six coups qui tourne autour du kit.",
+    description:
+      "Le single paradiddle-diddle combine un paradiddle et un double : RLRRLL, puis LRLLRR. Il est très utilisé pour les fills et les grooves linéaires.",
+    sticking: ["R", "L", "R", "R", "L", "L"],
+    counts: "1 & 2 & 3 &",
+    tempoStart: 60,
+    tempoTarget: 90,
+    steps: [
+      "Joue le motif lentement en deux groupes de trois.",
+      "Accentue le premier coup et garde les doubles égaux.",
+      "Alterne le départ main droite et main gauche.",
+      "Déplace le motif sur deux toms et la caisse claire.",
+    ],
+    application:
+      "Utilise le paradiddle-diddle pour un fill de six coups qui revient sur le temps 1.",
+  },
+  {
+    slug: "flam",
+    name: "Flam",
+    family: "flams",
+    level: 1,
+    summary: "Une note faible suivie d'une note forte : le premier ornement.",
+    description:
+      "Le flam est composé d'une note de grâce très douce et d'une note principale forte, jouées presque ensemble. C'est la base de tous les ornements à deux mains.",
+    sticking: ["FR", "FL", "FR", "FL"],
+    counts: "1 2 3 4",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Pose la baguette de grâce presque sur la peau.",
+      "Frappe la note principale en laissant la grâce rebondir juste avant.",
+      "Écoute : on doit entendre un seul son, légèrement épaissi.",
+      "Alterne les flams main droite et main gauche.",
+    ],
+    application:
+      "Place un flam sur le temps 1 de chaque mesure, puis sur les temps 1 et 3.",
+  },
+  {
+    slug: "flam-accent",
+    name: "Flam accent",
+    family: "flams",
+    level: 1,
+    summary: "Un flam sur les temps forts, pour donner du poids au groove.",
+    description:
+      "Le flam accent place un flam sur chaque temps fort. Il apprend à contrôler la hauteur des baguettes et à garder le tempo malgré l'ornement.",
+    sticking: ["FR", "FL", "FR", "FL"],
+    counts: "1 2 3 4",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Joue un flam sur chaque temps, très lentement.",
+      "Garde la main faible à la même hauteur que la main forte.",
+      "Vérifie que le flam ne retarde pas le temps.",
+      "Alterne flam main droite et main gauche toutes les deux mesures.",
+    ],
+    application:
+      "Joue le flam accent sur la caisse claire pendant qu'un charley régulier marque les croches.",
+  },
+  {
+    slug: "flam-tap",
+    name: "Flam tap",
+    family: "flams",
+    level: 2,
+    summary: "Un flam suivi d'un tap : le motif de base des fills ornés.",
+    description:
+      "Le flam tap enchaîne un flam et un tap de la même main. Il crée un motif à trois sons très utilisé dans les fills et les marches.",
+    sticking: ["FR", "R", "FL", "L"],
+    counts: "1 & 2 &",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Joue le flam puis le tap lentement, sans pause.",
+      "Garde le tap léger et égal.",
+      "Alterne le motif main droite et main gauche.",
+      "Place le motif sur les temps 1 et 3.",
+    ],
+    application:
+      "Utilise le flam tap pour commencer un fill de quatre temps sur la caisse claire.",
+  },
+  {
+    slug: "flamacue",
+    name: "Flamacue",
+    family: "flams",
+    level: 3,
+    summary: "Flam, triolet et accent : un ornement expressif.",
+    description:
+      "Le flamacue combine un flam accentué, un groupe de coups simples et un accent final. C'est un rudiment de phrase, utile pour les fills mélodiques.",
+    sticking: ["FR", "R", "L", "R", "L"],
+    counts: "1 & 2 & 3",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Isole le flam initial, puis le groupe de coups simples.",
+      "Joue l'accent final sans ralentir.",
+      "Alterne le départ main droite et main gauche.",
+      "Travaille le motif sur le kit en gardant le même tempo.",
+    ],
+    application:
+      "Place le flamacue en fin de phrase, avec l'accent final sur le temps 1 suivant.",
+  },
+  {
+    slug: "flam-paradiddle",
+    name: "Flam paradiddle",
+    family: "flams",
+    level: 2,
+    summary: "Un paradiddle précédé d'un flam : l'ornement entre dans le motif.",
+    description:
+      "Le flam paradiddle remplace le premier coup du paradiddle par un flam. Il combine l'ornement et la circulation du paradiddle.",
+    sticking: ["FR", "L", "R", "R", "L", "R", "L", "L"],
+    counts: "1 & 2 & 3 & 4 &",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Joue d'abord le paradiddle sans flam, puis ajoute la note de grâce.",
+      "Garde le flam doux et le reste du motif régulier.",
+      "Alterne le départ main droite et main gauche.",
+      "Déplace le motif sur la caisse claire et les toms.",
+    ],
+    application:
+      "Utilise le flam paradiddle pour un fill de quatre temps qui circule sur le kit.",
+  },
+  {
+    slug: "single-flammed-mill",
+    name: "Single flammed mill",
+    family: "flams",
+    level: 2,
+    summary: "Un flam sur chaque temps, avec un mouvement continu.",
+    description:
+      "Le single flammed mill enchaîne des flams et des coups simples dans un mouvement de rotation. Il développe le contrôle des ornements en mouvement.",
+    sticking: ["FR", "R", "FL", "L"],
+    counts: "1 & 2 &",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Travaille le flam seul, puis ajoute le coup simple.",
+      "Garde le mouvement circulaire entre caisse claire et toms.",
+      "Alterne le départ main droite et main gauche.",
+      "Monte le tempo sans perdre la clarté du flam.",
+    ],
+    application:
+      "Joue le single flammed mill autour du kit, en revenant sur la caisse claire au temps 1.",
+  },
+  {
+    slug: "flam-paradiddle-diddle",
+    name: "Flam paradiddle-diddle",
+    family: "flams",
+    level: 3,
+    summary: "Le paradiddle-diddle orné d'un flam initial.",
+    description:
+      "Le flam paradiddle-diddle ajoute un flam au début du paradiddle-diddle. Il combine un ornement et un motif de six coups.",
+    sticking: ["FR", "L", "R", "R", "L", "L"],
+    counts: "1 & 2 & 3 &",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue le paradiddle-diddle sans flam, puis ajoute la grâce.",
+      "Garde le flam léger et le double final propre.",
+      "Alterne le départ main droite et main gauche.",
+      "Travaille le motif sur deux toms et la caisse claire.",
+    ],
+    application:
+      "Utilise le motif comme fill de six coups avant un crash.",
+  },
+  {
+    slug: "pataflafla",
+    name: "Pataflafla",
+    family: "flams",
+    level: 3,
+    summary: "Flam, deux coups, flam : un ornement en miroir.",
+    description:
+      "Le pataflafla alterne un flam, deux coups simples et un flam final. Il est utilisé pour les fills et les transitions expressives.",
+    sticking: ["FR", "R", "L", "FL"],
+    counts: "1 e & a",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue les deux flams séparément, puis relie-les par les coups simples.",
+      "Garde le deuxième flam aussi net que le premier.",
+      "Alterne le départ main droite et main gauche.",
+      "Place le motif sur les temps 1 et 3.",
+    ],
+    application:
+      "Utilise le pataflafla comme fill de quatre temps, avec un accent sur le dernier flam.",
+  },
+  {
+    slug: "swiss-army-triplet",
+    name: "Swiss Army triplet",
+    family: "flams",
+    level: 2,
+    summary: "Un flam suivi de deux coups : un triolet qui avance.",
+    description:
+      "Le Swiss Army triplet est un flam suivi de deux coups simples. Il donne une sensation de triolet et s'utilise dans les grooves et les fills.",
+    sticking: ["FR", "R", "L"],
+    counts: "1 & 2",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Joue le flam puis les deux coups en un mouvement continu.",
+      "Garde le flam doux et les deux coups égaux.",
+      "Alterne le départ main droite et main gauche.",
+      "Place le motif sur chaque temps d'une mesure lente.",
+    ],
+    application:
+      "Joue le Swiss Army triplet sur la caisse claire, puis déplace-le sur les toms.",
+  },
+  {
+    slug: "inverted-flam-tap",
+    name: "Inverted flam tap",
+    family: "flams",
+    level: 3,
+    summary: "Un tap puis un flam : l'ornement à l'envers.",
+    description:
+      "L'inverted flam tap inverse l'ordre du flam tap : un tap suivi d'un flam. Il développe le contrôle des ornements sur les temps faibles.",
+    sticking: ["R", "FR", "L", "FL"],
+    counts: "1 & 2 &",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue le tap puis le flam lentement, en gardant le tempo.",
+      "Vérifie que le flam ne décale pas le temps suivant.",
+      "Alterne le départ main droite et main gauche.",
+      "Travaille le motif sur la caisse claire et le charley.",
+    ],
+    application:
+      "Utilise l'inverted flam tap pour orner un groove binaire sur les temps 2 et 4.",
+  },
+  {
+    slug: "flam-drag",
+    name: "Flam drag",
+    family: "flams",
+    level: 3,
+    summary: "Un flam suivi d'un drag : deux ornements enchaînés.",
+    description:
+      "Le flam drag combine un flam et un drag. Il demande un contrôle fin de la grâce et du rebond, et s'utilise dans les fills avancés.",
+    sticking: ["FR", "DR", "R"],
+    counts: "1 & 2",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Travaille le flam seul, puis le drag seul.",
+      "Enchaîne les deux sans pause, en gardant le tempo.",
+      "Garde la note principale finale claire et accentée.",
+      "Alterne le départ main droite et main gauche.",
+    ],
+    application:
+      "Place le flam drag en fin de fill, avec la note finale sur le temps 1.",
+  },
+  {
+    slug: "drag",
+    name: "Drag",
+    family: "drags",
+    level: 1,
+    summary: "Deux petites notes de rebond avant une note principale.",
+    description:
+      "Le drag est composé de deux notes de grâce très douces suivies d'une note principale. C'est l'ornement de base de la famille des drags.",
+    sticking: ["DR", "DL", "DR", "DL"],
+    counts: "1 2 3 4",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Laisse la baguette rebondir deux fois doucement sur la peau.",
+      "Ajoute la note principale, plus forte, juste après.",
+      "Garde les deux rebonds serrés et réguliers.",
+      "Alterne le drag main droite et main gauche.",
+    ],
+    application:
+      "Place un drag sur le temps 1 de chaque mesure, puis sur les temps 1 et 3.",
+  },
+  {
+    slug: "single-drag-tap",
+    name: "Single drag tap",
+    family: "drags",
+    level: 2,
+    summary: "Un drag suivi d'un tap, puis l'alternance.",
+    description:
+      "Le single drag tap enchaîne un drag et un tap. Il apprend à conserver la clarté du drag tout en gardant le mouvement.",
+    sticking: ["DR", "R", "DL", "L"],
+    counts: "1 & 2 &",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue le drag puis le tap lentement.",
+      "Garde le tap léger et le drag serré.",
+      "Alterne le motif main droite et main gauche.",
+      "Place le motif sur les temps 1 et 3.",
+    ],
+    application:
+      "Utilise le single drag tap pour un fill de quatre temps sur la caisse claire.",
+  },
+  {
+    slug: "double-drag-tap",
+    name: "Double drag tap",
+    family: "drags",
+    level: 3,
+    summary: "Deux drags puis un tap : un motif plus dense.",
+    description:
+      "Le double drag tap enchaîne deux drags et un tap. Il demande de la régularité dans les rebonds et un bon contrôle du tempo.",
+    sticking: ["DR", "DR", "R", "DL", "DL", "L"],
+    counts: "1 & 2 & 3 &",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Travaille un drag seul, puis deux drags consécutifs.",
+      "Ajoute le tap final sans accélérer.",
+      "Alterne le départ main droite et main gauche.",
+      "Monte le tempo par paliers de 5 BPM.",
+    ],
+    application:
+      "Place le double drag tap sur deux temps et termine par un accent.",
+  },
+  {
+    slug: "lesson-25",
+    name: "Lesson 25",
+    family: "drags",
+    level: 2,
+    summary: "Un drag suivi de deux coups : un classique des fills.",
+    description:
+      "Le Lesson 25 est un drag suivi de deux coups. C'est un rudiment très utilisé dans les fills et les marches, qui combine ornement et mouvement.",
+    sticking: ["DR", "R", "L"],
+    counts: "1 & 2",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue le drag puis les deux coups lentement.",
+      "Garde le drag doux et les deux coups égaux.",
+      "Alterne le départ main droite et main gauche.",
+      "Place le motif sur les temps 1 et 3.",
+    ],
+    application:
+      "Utilise le Lesson 25 comme fill de trois coups avant un crash.",
+  },
+  {
+    slug: "single-dragadiddle",
+    name: "Single dragadiddle",
+    family: "drags",
+    level: 3,
+    summary: "Un drag sur le premier coup d'un paradiddle.",
+    description:
+      "Le single dragadiddle remplace le premier coup du paradiddle par un drag. Il combine l'ornement et la circulation du paradiddle.",
+    sticking: ["DR", "L", "R", "R", "L", "R", "L", "L"],
+    counts: "1 & 2 & 3 & 4 &",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Joue le paradiddle sans drag, puis ajoute le drag initial.",
+      "Garde le drag serré et le reste du motif régulier.",
+      "Alterne le départ main droite et main gauche.",
+      "Déplace le motif sur la caisse claire et les toms.",
+    ],
+    application:
+      "Utilise le single dragadiddle pour un fill de quatre temps.",
+  },
+  {
+    slug: "drag-paradiddle-1",
+    name: "Drag paradiddle #1",
+    family: "drags",
+    level: 3,
+    summary: "Un drag, puis un paradiddle : la version ornée.",
+    description:
+      "Le drag paradiddle #1 place un drag avant un paradiddle. Il développe la coordination entre ornement et motif.",
+    sticking: ["DR", "L", "R", "R", "L", "R", "L", "L"],
+    counts: "1 & 2 & 3 & 4 &",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Travaille le drag seul, puis le paradiddle seul.",
+      "Enchaîne les deux sans pause.",
+      "Garde le tempo stable malgré l'ornement.",
+      "Alterne le départ main droite et main gauche.",
+    ],
+    application:
+      "Place le motif sur les toms pour un fill de quatre temps.",
+  },
+  {
+    slug: "drag-paradiddle-2",
+    name: "Drag paradiddle #2",
+    family: "drags",
+    level: 4,
+    summary: "Deux drags et un paradiddle : une version plus dense.",
+    description:
+      "Le drag paradiddle #2 ajoute un deuxième drag. Il demande un contrôle avancé du rebond et de la coordination.",
+    sticking: ["DR", "DR", "L", "R", "R", "L", "L"],
+    counts: "1 & 2 & 3 & 4",
+    tempoStart: 50,
+    tempoTarget: 70,
+    steps: [
+      "Travaille les deux drags séparément, puis ensemble.",
+      "Ajoute le paradiddle sans perdre la régularité.",
+      "Garde les épaules basses et les poignets souples.",
+      "Monte le tempo seulement quand le motif est propre.",
+    ],
+    application:
+      "Utilise ce motif comme fill avancé, avec un accent sur la dernière note.",
+  },
+  {
+    slug: "single-ratamacue",
+    name: "Single ratamacue",
+    family: "drags",
+    level: 1,
+    summary: "Un drag, un triolet et un accent : le ratamacue de base.",
+    description:
+      "Le single ratamacue combine un drag, trois coups simples et un accent. C'est un rudiment expressif, très utilisé dans les fills.",
+    sticking: ["DR", "L", "R", "L"],
+    counts: "1 & 2 &",
+    tempoStart: 50,
+    tempoTarget: 90,
+    steps: [
+      "Joue le drag puis les trois coups lentement.",
+      "Accentue la dernière note sans ralentir.",
+      "Alterne le départ main droite et main gauche.",
+      "Place le motif sur les temps 1 et 2.",
+    ],
+    application:
+      "Utilise le single ratamacue comme fill de quatre coups avant un crash.",
+  },
+  {
+    slug: "double-ratamacue",
+    name: "Double ratamacue",
+    family: "drags",
+    level: 3,
+    summary: "Deux drags, un triolet et un accent.",
+    description:
+      "Le double ratamacue ajoute un deuxième drag au single ratamacue. Il demande plus de contrôle et de régularité dans les rebonds.",
+    sticking: ["DR", "DR", "L", "R", "L"],
+    counts: "1 & 2 & 3",
+    tempoStart: 50,
+    tempoTarget: 80,
+    steps: [
+      "Travaille les deux drags lentement, puis ajoute le triolet.",
+      "Garde l'accent final net.",
+      "Alterne le départ main droite et main gauche.",
+      "Monte le tempo par paliers de 5 BPM.",
+    ],
+    application:
+      "Place le double ratamacue en fin de phrase, avec l'accent sur le temps 1 suivant.",
+  },
+  {
+    slug: "triple-ratamacue",
+    name: "Triple ratamacue",
+    family: "drags",
+    level: 4,
+    summary: "Trois drags, un triolet et un accent : la version longue.",
+    description:
+      "Le triple ratamacue enchaîne trois drags, un triolet et un accent. C'est un rudiment avancé qui exige un excellent contrôle du rebond.",
+    sticking: ["DR", "DR", "DR", "L", "R", "L"],
+    counts: "1 & 2 & 3 &",
+    tempoStart: 50,
+    tempoTarget: 70,
+    steps: [
+      "Travaille chaque drag séparément, puis les trois à la suite.",
+      "Ajoute le triolet et l'accent sans perdre le tempo.",
+      "Garde les poignets souples et les rebonds serrés.",
+      "Enregistre-toi pour vérifier la régularité.",
+    ],
+    application:
+      "Utilise le triple ratamacue comme fill avancé ou comme exercice de contrôle.",
+  },
+];
+
+export function getRudiment(slug: string): Rudiment | undefined {
+  return rudiments.find((rudiment) => rudiment.slug === slug);
+}
+
+export function getRudimentIndex(slug: string): number {
+  return rudiments.findIndex((rudiment) => rudiment.slug === slug);
+}

@@ -1,0 +1,27 @@
+# LearnBatterie
+
+> Site pédagogique gratuit pour apprendre les rudiments de la batterie aux débutants.
+
+LearnBatterie propose un programme de 12 semaines, 8 leçons de base, 40 fiches de rudiments, 12 exercices d'application et des ressources imprimables. Le site est gratuit, sans publicité, sans affiliation, sans compte et sans audio pour le moment.
+
+## Pages principales
+
+- https://calurion-dev.github.io/site-learnbatterie/ : accueil
+- https://calurion-dev.github.io/site-learnbatterie/programme/ : programme de 12 semaines
+- https://calurion-dev.github.io/site-learnbatterie/bases/ : les 8 leçons de base
+- https://calurion-dev.github.io/site-learnbatterie/rudiments/ : les 40 rudiments
+- https://calurion-dev.github.io/site-learnbatterie/exercices/ : exercices d'application
+- https://calurion-dev.github.io/site-learnbatterie/ressources/ : ressources imprimables
+- https://calurion-dev.github.io/site-learnbatterie/glossaire/ : glossaire
+
+## Public
+
+Débutants de 15 ans et plus, sans professeur, avec une batterie acoustique, électronique ou un pad.
+
+## Principes
+
+- Gratuit et sans contrepartie commerciale.
+- La pratique d'abord.
+- Un seul chemin de progression.
+- Le tempo avant la vitesse.
+- Contenu original, protégé par le droit d'auteur.
