@@ -515,7 +515,7 @@ export function Metronome() {
           <div className="metronome-segment">
             {TIME_SIGNATURES.map((signature) => (
               <button
-                className={signature === timeSignature ? "is-selected" : ""}
+                className={`metronome-value${signature === timeSignature ? " is-selected" : ""}`}
                 type="button"
                 key={signature}
                 onClick={() => selectTimeSignature(signature)}
@@ -532,7 +532,7 @@ export function Metronome() {
           <div className="metronome-segment">
             {SUBDIVISIONS.map((item) => (
               <button
-                className={item.value === subdivision ? "is-selected" : ""}
+                className={`metronome-value${item.value === subdivision ? " is-selected" : ""}`}
                 type="button"
                 key={item.value}
                 onClick={() => selectSubdivision(item.value)}

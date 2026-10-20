@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MetronomeIcon } from "@/components/MetronomeIcon";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
   { href: "/programme/", label: "Programme" },
@@ -38,6 +39,7 @@ export function SiteHeader() {
           >
             <MetronomeIcon size={19} />
           </Link>
+          <ThemeToggle />
         </nav>
 
         <Link className="header-cta" href="/programme/">
@@ -61,6 +63,7 @@ export function SiteHeader() {
             >
               <MetronomeIcon size={20} />
             </Link>
+            <ThemeToggle />
           </nav>
         </details>
       </div>

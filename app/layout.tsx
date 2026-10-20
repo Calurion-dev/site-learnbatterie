@@ -17,6 +17,8 @@ const serif = Source_Serif_4({
   display: "swap",
 });
 
+const themeScript = `(function(){try{var t=localStorage.getItem("learnbatterie-theme");var d=t==="dark"||(t!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.dataset.theme=d?"dark":"light";document.documentElement.style.colorScheme=d?"dark":"light";}catch(e){}})();`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -51,8 +53,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${display.variable} ${serif.variable}`}>
+    <html lang="fr" suppressHydrationWarning className={`${display.variable} ${serif.variable}`}>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <a className="skip-link" href="#contenu">
           Aller au contenu
         </a>
