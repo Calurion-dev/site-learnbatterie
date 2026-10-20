@@ -2092,8 +2092,8 @@ td strong {
 }
 
 .metronome-beat.is-active {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--panel-fg);
+  color: var(--panel);
   transform: scale(1.08);
 }
 
