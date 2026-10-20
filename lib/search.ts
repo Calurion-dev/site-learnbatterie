@@ -10,6 +10,14 @@ export type SearchItem = {
   category: "Rudiment" | "Leçon" | "Exercice" | "Glossaire";
 };
 
+function glossarySlug(term: string): string {
+  return term
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-");
+}
+
 export const searchIndex: SearchItem[] = [
   ...rudiments.map((rudiment) => ({
     title: rudiment.name,
@@ -32,7 +40,7 @@ export const searchIndex: SearchItem[] = [
   ...glossary.map((entry) => ({
     title: entry.term,
     description: entry.definition,
-    href: `/glossaire/#${entry.term.toLowerCase().replace(/\s+/g, "-")}`,
+    href: `/glossaire/#${glossarySlug(entry.term)}`,
     category: "Glossaire" as const,
   })),
 ];
