@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ressources/fiche-seance/",
     "/glossaire/",
     "/recherche/",
+    "/metronome/",
     "/a-propos/",
     "/contact/",
     "/mentions-legales/",

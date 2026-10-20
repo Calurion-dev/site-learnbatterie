@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MetronomeIcon } from "@/components/MetronomeIcon";
 
 const links = [
   { href: "/programme/", label: "Programme" },
@@ -29,6 +30,14 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <Link
+            className="nav-icon-link"
+            href="/metronome/"
+            aria-label="Métronome"
+            title="Métronome"
+          >
+            <MetronomeIcon size={19} />
+          </Link>
         </nav>
 
         <Link className="header-cta" href="/programme/">
@@ -44,6 +53,14 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link href="/recherche/">Recherche</Link>
+            <Link
+              className="nav-icon-link mobile-nav-icon"
+              href="/metronome/"
+              aria-label="Métronome"
+              title="Métronome"
+            >
+              <MetronomeIcon size={20} />
+            </Link>
           </nav>
         </details>
       </div>
