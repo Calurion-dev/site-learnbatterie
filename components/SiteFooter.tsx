@@ -16,6 +16,7 @@ export function SiteFooter() {
           <p className="footer-heading">Apprendre</p>
           <Link href="/programme/">Programme de 12 semaines</Link>
           <Link href="/bases/">Les 8 leçons de base</Link>
+          <Link href="/batterie/">Les parties de la batterie</Link>
           <Link href="/rudiments/">Les 40 rudiments</Link>
         </div>
         <div>

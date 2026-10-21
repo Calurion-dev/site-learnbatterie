@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DrumKitIllustration } from "@/components/DrumKitIllustration";
 import { StickingGrid } from "@/components/StickingGrid";
 import { lessons } from "@/data/lessons";
 import { program } from "@/data/program";
@@ -42,32 +43,43 @@ export default function HomePage() {
             <p className="hero-note">{siteTagline} · 15–25 min par séance</p>
           </div>
 
-          <aside className="hero-card" aria-label="Aperçu de la semaine 1">
-            <div className="hero-card-top">
-              <span>Semaine 01</span>
-              <span>Fondations</span>
-            </div>
-            <h2>Single stroke roll</h2>
-            <p>
-              Deux coups alternés, réguliers et détendus. Le premier rudiment,
-              celui qui installe tout le reste.
-            </p>
-            <div className="hero-pattern" aria-hidden="true">
-              {["R", "L", "R", "L", "R", "L", "R", "L"].map((token, index) => (
-                <span key={`${token}-${index}`}>{token}</span>
-              ))}
-            </div>
-            <div className="hero-card-footer">
-              <span>
-                Tempo de départ
-                <strong>60 BPM</strong>
-              </span>
-              <span>
-                Objectif
-                <strong>120 BPM</strong>
-              </span>
-            </div>
-          </aside>
+          <div className="hero-visual">
+            <Link
+              href="/batterie/"
+              className="hero-drum-link"
+              aria-label="Découvrir les parties de la batterie"
+              title="Découvrir les parties de la batterie"
+            >
+              <DrumKitIllustration className="hero-drum" />
+            </Link>
+
+            <aside className="hero-card" aria-label="Aperçu de la semaine 1">
+              <div className="hero-card-top">
+                <span>Semaine 01</span>
+                <span>Fondations</span>
+              </div>
+              <h2>Single stroke roll</h2>
+              <p>
+                Deux coups alternés, réguliers et détendus. Le premier rudiment,
+                celui qui installe tout le reste.
+              </p>
+              <div className="hero-pattern" aria-hidden="true">
+                {["R", "L", "R", "L", "R", "L", "R", "L"].map((token, index) => (
+                  <span key={`${token}-${index}`}>{token}</span>
+                ))}
+              </div>
+              <div className="hero-card-footer">
+                <span>
+                  Tempo de départ
+                  <strong>60 BPM</strong>
+                </span>
+                <span>
+                  Objectif
+                  <strong>120 BPM</strong>
+                </span>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 

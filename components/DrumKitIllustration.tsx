@@ -56,6 +56,18 @@ export function DrumKitIllustration({ className }: DrumKitIllustrationProps) {
         <ellipse cx="214" cy="98" rx="26" ry="8" />
         <path d="M208 104l-12 8" />
 
+        {/* Cymbale ride, derrière le tom basse */}
+        <ellipse
+          cx="274"
+          cy="106"
+          rx="30"
+          ry="5.5"
+          strokeWidth="2.2"
+          transform="rotate(-6 274 106)"
+        />
+        <circle cx="274" cy="106" r="2.6" fill="currentColor" stroke="none" />
+        <path d="M274 106v92M274 198l-12 20M274 198l12 20M274 198v20" />
+
         {/* Tom basse */}
         <ellipse cx="274" cy="142" rx="30" ry="9" />
         <path d="M244 142v32M304 142v32" />
