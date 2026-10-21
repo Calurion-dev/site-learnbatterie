@@ -577,6 +577,23 @@ code {
   margin-top: 1rem;
 }
 
+.page-hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.page-hero-drum {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  color: var(--ink);
+}
+
+.drum-kit-accent {
+  stroke: var(--accent);
+}
+
 .page-hero-aside {
   padding: 1rem 0 0 1.5rem;
   border-left: 2px solid var(--accent);

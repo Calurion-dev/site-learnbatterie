@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { DrumKitIllustration } from "@/components/DrumKitIllustration";
 import { program } from "@/data/program";
 import { rudiments } from "@/data/rudiments";
 
@@ -26,11 +27,14 @@ export default function ProgrammePage() {
                 musicale. Rien de plus.
               </p>
             </div>
-            <aside className="page-hero-aside">
-              <strong>Matériel minimum</strong>
-              Une paire de baguettes, un pad ou une caisse claire. Une batterie
-              complète n&apos;est pas obligatoire pour commencer.
-            </aside>
+            <div className="page-hero-visual">
+              <DrumKitIllustration className="page-hero-drum" />
+              <aside className="page-hero-aside">
+                <strong>Matériel minimum</strong>
+                Une paire de baguettes, un pad ou une caisse claire. Une batterie
+                complète n&apos;est pas obligatoire pour commencer.
+              </aside>
+            </div>
           </div>
         </div>
       </section>
